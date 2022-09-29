@@ -1,0 +1,69 @@
+version: "3"
+
+services:
+  db:
+    image: postgres:11
+    container_name: 'calcorte-db'
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: 12345678
+      POSTGRES_DB: 'calcorte'
+    ports:
+      - "8090:5432"
+    volumes:
+      - ~/.docker-conf/calcorte-postgresql:/var/lib/postgresql/data
+
+  pgadmin4:
+    image: dpage/pgadmin4
+    container_name: 'calcorte-pgadmin4'
+    environment:
+      PGADMIN_DEFAULT_EMAIL: "guest@guest.com"
+      PGADMIN_DEFAULT_PASSWORD: "12345678"
+    ports:
+      - "5001:80"
+    depends_on:
+      - db
+
+  calcorte-api:
+    container_name: 'calcorte-api'
+    build:
+      context: calcorte-backend
+      dockerfile: Dockerfile
+    image: edernilson/calcorte-api:0.0.1
+    ports:
+      - 8091:8080
+    depends_on:
+      - 'db'
+    environment:
+        - 'SPRING_PROFILES_ACTIVE=prod'
+        - 'POSTGRES_URL=jdbc:postgresql://db:5432/calcorte'
+        - 'POSTGRES_USER=postgres'
+        - 'POSTGRES_PASSWORD=12345678'
+        - 'CORS_ORIGINS=http://localhost:8081,http://192.168.1.72:8081'
+
+  calcorte-web:
+    container_name: 'calcorte-web'
+    build:
+      context: calcorte-frontend
+      dockerfile: Dockerfile
+      # args:
+      #   - 'VUE_APP_API_URL=http://localhost:8081/api'
+    image: edernilson/calcorte-web:0.0.1
+    ports:
+      - 8092:3000
+    depends_on:
+      - 'calcorte-api'
+    # environment:
+    #     - 'VUE_APP_API_URL=http://calcorte-api:8080/api'
+
+  nginx:
+      container_name: calcorte-nginx
+      image: proxy
+      build: ./.nginx
+      depends_on:
+        - calcorte-api
+        - calcorte-web
+      ports:
+        - 8081:80
+        - 443:443
+
