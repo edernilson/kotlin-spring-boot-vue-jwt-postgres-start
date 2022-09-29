@@ -2,7 +2,7 @@
 
 ## Technologies
 
-1. Backend: Java 11, Kotlin, Spring boot, JWT, PostgreSQL
+1. Backend: Kotlin, Spring boot, JWT, PostgreSQL
 2. Frontend: Vue, JWT, Axios
 
 ## Tasks
@@ -29,7 +29,7 @@
 
 1. If on linux, run the script start services
 
-    chmod +x runAll.sh &&  ./runAll.sh
+        chmod +x runAll.sh &&  ./runAll.sh
 
 2. Open the browser and the managers:    
 
@@ -51,8 +51,7 @@
 
 ## Credits
 
-    - Tips of docker-compose.yml and start script
-    [Sherzod Mamadaliev](https://github.com/mamadaliev)
+- Tips of docker-compose.yml and start script: [Sherzod Mamadaliev](https://github.com/mamadaliev)
 
 ## License
 
