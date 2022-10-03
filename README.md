@@ -1,4 +1,4 @@
-# spring-boot-vue-jwt-postgres-start
+# kotlinspring-boot-vue-jwt-postgres-start
 
 ## Technologies
 
