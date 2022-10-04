@@ -1,4 +1,4 @@
-package com.edernilson.calcorte.backend.user
+package com.edernilson.calcorte.backend.domain
 
 import com.edernilson.calcorte.backend.security.UserDetailsImpl
 import org.springframework.beans.factory.annotation.Autowired

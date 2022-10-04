@@ -1,6 +1,6 @@
 package com.edernilson.calcorte.backend.security
 
-import com.edernilson.calcorte.backend.user.User
+import com.edernilson.calcorte.backend.domain.User
 import com.fasterxml.jackson.annotation.JsonIgnore
 import org.springframework.security.core.GrantedAuthority
 import org.springframework.security.core.userdetails.UserDetails

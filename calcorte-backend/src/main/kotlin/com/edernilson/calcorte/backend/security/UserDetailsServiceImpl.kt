@@ -1,6 +1,6 @@
 package com.edernilson.calcorte.backend.security
 
-import com.edernilson.calcorte.backend.user.UserRepository
+import com.edernilson.calcorte.backend.domain.UserRepository
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.security.core.userdetails.UserDetails
 import org.springframework.security.core.userdetails.UserDetailsService

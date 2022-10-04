@@ -1,5 +1,6 @@
-package com.edernilson.calcorte.backend.product
+package com.edernilson.calcorte.backend.domain
 
+import com.edernilson.calcorte.backend.exception.ProductNotFoundException
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Service
 

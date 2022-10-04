@@ -9,7 +9,7 @@
 
     [X] Acesso via token JWT
     [X] Cadastro de produtos
-        [ ] Identificar o tipo de corte (fixo, variável)
+        [X] Identificar o tipo de corte (fixo, variável)
     [ ] Cadastro de Grupos e Subgrupos de Produtos
     [ ] Cadastro de Clientes
     [ ] Cadastro de Projetos
