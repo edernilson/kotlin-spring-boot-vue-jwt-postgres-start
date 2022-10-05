@@ -50,8 +50,8 @@ class ExceptionControllerAdvice {
         return ErrorMessage(HttpStatus.BAD_REQUEST.value(), sb.toString())
     }
 
-    @ExceptionHandler(ProductNotFoundException::class)
-    fun processValidationError(ex: ProductNotFoundException): ErrorMessage {
+    @ExceptionHandler(RegisterNotFoundException::class)
+    fun processValidationError(ex: RegisterNotFoundException): ErrorMessage {
         return ErrorMessage(HttpStatus.NOT_FOUND.value(), ex.message)
     }
 }

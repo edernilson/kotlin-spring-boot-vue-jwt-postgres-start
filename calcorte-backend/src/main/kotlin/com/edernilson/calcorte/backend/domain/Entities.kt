@@ -31,3 +31,20 @@ data class Product(
     val description: String = "",
     val materialType: MaterialType = MaterialType.OTHER
 )
+
+@Entity
+@Table(name = "clientes")
+data class Client(
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    var id: Long? = null,
+    @field:NotBlank
+    val name: String = "",
+    @field:NotBlank
+    val phone: String = "",
+    @field:NotBlank
+    val email: String = "",
+    val contactName: String = "",
+    val contactPhone: String = "",
+)

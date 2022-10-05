@@ -1,5 +1,6 @@
 package com.edernilson.calcorte.backend.product
 
+import com.edernilson.calcorte.backend.domain.Client
 import com.edernilson.calcorte.backend.domain.Product
 import com.edernilson.calcorte.backend.domain.ProductService
 import io.swagger.v3.oas.annotations.tags.Tag

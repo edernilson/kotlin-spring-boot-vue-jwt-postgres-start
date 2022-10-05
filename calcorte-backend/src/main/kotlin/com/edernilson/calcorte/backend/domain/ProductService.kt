@@ -1,6 +1,6 @@
 package com.edernilson.calcorte.backend.domain
 
-import com.edernilson.calcorte.backend.exception.ProductNotFoundException
+import com.edernilson.calcorte.backend.exception.RegisterNotFoundException
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Service
 
@@ -29,7 +29,7 @@ class ProductService {
             )
             return productRepository.save(newProduct)
         }
-        throw ProductNotFoundException("Product not found!")
+        throw RegisterNotFoundException("Product not found!")
     }
 
     fun delete(id: Long) {
@@ -38,6 +38,6 @@ class ProductService {
             productRepository.delete(product.get())
             return
         }
-        throw ProductNotFoundException("Product not found!")
+        throw RegisterNotFoundException("Product not found!")
     }
 }

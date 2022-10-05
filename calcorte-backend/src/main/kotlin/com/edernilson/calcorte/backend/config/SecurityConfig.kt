@@ -26,9 +26,6 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer
 @EnableWebSecurity
 class SecurityConfig : WebSecurityConfigurerAdapter() {
 
-    @Value("\${cors.originPatterns:default}")
-    private val corsOriginPatterns: String = ""
-
     @Autowired
     private lateinit var jwtUtil: JWTUtil
 
@@ -72,16 +69,16 @@ class SecurityConfig : WebSecurityConfigurerAdapter() {
 //        }
 //    }
 
-    @Bean
-    fun corsConfigurationSource(): CorsConfigurationSource {
-        val configuration = CorsConfiguration()
-        configuration.allowedOriginPatterns = corsOriginPatterns.split(",")
-//        configuration.allowedOrigins = listOf("https://localhost:8080")
-        configuration.allowedMethods = listOf("GET", "POST", "PUT", "DELETE", "PATCH")
-        configuration.addAllowedHeader("*")
-        val source = UrlBasedCorsConfigurationSource()
-        source.registerCorsConfiguration("/**", configuration)
-        return source
-    }
+//    @Bean
+//    fun corsConfigurationSource(): CorsConfigurationSource {
+//        val configuration = CorsConfiguration()
+//        configuration.allowedOriginPatterns = corsOriginPatterns.split(",")
+////        configuration.allowedOrigins = listOf("https://localhost:8080")
+//        configuration.allowedMethods = listOf("GET", "POST", "PUT", "DELETE", "PATCH")
+//        configuration.addAllowedHeader("*")
+//        val source = UrlBasedCorsConfigurationSource()
+//        source.registerCorsConfiguration("/**", configuration)
+//        return source
+//    }
 
 }

@@ -9,3 +9,4 @@ interface UserRepository: JpaRepository<User, Long> {
 interface ProductRepository: JpaRepository<Product, Long> {
     fun findByCode(code: String): Product?
 }
+interface ClientRepository: JpaRepository<Client, Long> {}

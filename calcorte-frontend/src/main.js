@@ -6,7 +6,7 @@ import axios from "axios"
 
 axios.defaults.withCredentials = true
 // axios.defaults.baseURL = "http://localhost:8080/api"
-// axios.defaults.baseURL = process.env.VUE_APP_API_URL ? process.env.VUE_APP_API_URL : "http://localhost:8081/api"
+// axios.defaults.baseURL = process.env.VUE_APP_API_URL ? process.env.VUE_APP_API_URL : "http://localhost:8080/api"
 axios.defaults.baseURL = "http://localhost:8081/api"
 
 // console.log("process.env.VUE_APP_API_URL", process.env.VUE_APP_API_URL)

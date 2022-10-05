@@ -1,15 +1,21 @@
 <template>
   <div class="container-fluid">
-    <h2 class="float-start">Produtos</h2>
-    <button type="button"
-            class="btn btn-primary btn-sm m-2 float-end"
-            data-bs-toggle="modal"
-            data-bs-target="#editModal"
-            @click="addClick()">
-      Adicionar Produto
-    </button>
+    <div class="d-flex flex-row justify-content-between border-bottom mb-3">
+      <h2 class="">Produtos</h2>
+      <button type="button"
+              class="btn btn-primary btn-sm m-2"
+              data-bs-toggle="modal"
+              data-bs-target="#editModal"
+              @click="addClick()">
+        Adicionar Produto
+      </button>
+    </div>
 
-    <table class="table table-striped table-hover table-sm">
+    <div v-if="listaProdutos.length === 0" class="text-center mt-5">
+      Não há produtos cadastrados
+    </div>
+
+    <table v-else class="table table-striped table-hover table-sm" >
       <thead>
       <th>Código</th>
       <th>Descrição</th>
