@@ -11,7 +11,7 @@
     [X] Cadastro de produtos
         [X] Identificar o tipo de corte (fixo, variável)
     [ ] Cadastro de Grupos e Subgrupos de Produtos
-    [ ] Cadastro de Clientes
+    [X] Cadastro de Clientes
     [ ] Cadastro de Projetos
         [ ] Dados do Cliente
         [ ] Dados de Ambientes
@@ -23,7 +23,7 @@
             [ ] API de cálculo
         [ ] Identificação/nomeação e registro de sobras
     [ ] Cadastro de Usuários
-    [ ] Documentação Swagger
+    [X] Documentação Swagger
 
 ## How to start
 
